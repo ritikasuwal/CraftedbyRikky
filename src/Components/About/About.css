@@ -1,0 +1,174 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-title h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 600;
+}
+
+.about-sections {
+  display: flex;
+  width: 100%;
+  gap: 4rem;
+}
+
+.about-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-para {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-para p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.about-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-skill {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.about-skill p {
+  flex: 0 0 150px;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  min-width: 100px;
+}
+
+.about-skill hr {
+  flex-grow: 1;
+  height: 8px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(264deg, #df8908 -5.09%, #b415ff 106.28%);
+}
+
+.about-achievements {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.about-achievement {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.achievements-divider {
+  height: 100px;
+  width: 2px;
+  background: #cbd5e1;
+}
+
+.about-achievement h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(267deg, #df8908 50.41%, #b415ff 90.25%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-achievement p {
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1024px) {
+  .about-sections {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 2rem 4%;
+  }
+
+  .about-sections {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+
+  .about-achievements {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-achievement {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-para p {
+    font-size: 1rem;
+  }
+
+  .about-skill {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-skill p {
+    margin-bottom: 0.5rem;
+  }
+
+  .about-achievements {
+    gap: 1.5rem;
+  }
+}

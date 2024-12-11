@@ -1,0 +1,106 @@
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem clamp(1rem, 5%, 10%);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.services-title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.services-title h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 600;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.services-format {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: 10px;
+  border: 2px solid white;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.services-format h2 {
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  font-weight: 800;
+  background: linear-gradient(270deg, #df8908 50%, #b415ff 100.28%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-format p {
+  font-size: clamp(0.875rem, 2vw, 1.25rem);
+  color: #d4d4d4;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.services-readmore {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.services-readmore img {
+  height: 1.25rem;
+  width: auto;
+}
+
+.services-format:hover {
+  border: 2px solid #da9809;
+  background-image: linear-gradient(50deg, #914f23, #2d39a2);
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .services-format {
+    padding: clamp(1rem, 2vw, 1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .services-title {
+    margin-bottom: 2rem;
+  }
+
+  .services-format {
+    padding: 1rem;
+  }
+}

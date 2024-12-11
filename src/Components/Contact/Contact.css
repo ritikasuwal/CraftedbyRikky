@@ -1,0 +1,163 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 10%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.contact-title h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 600;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.contact-left h1 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 700;
+  background: linear-gradient(270deg, #df8908 80%, #8415ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 90%;
+}
+
+.contact-left p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 100%;
+  color: #d8d8d8;
+  line-height: 1.6;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #d8d8d8;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-detail img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.contact-right label {
+  color: #d8d8d8;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+}
+
+.contact-right input,
+.contact-right textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #32323c;
+  color: #a0a0a0;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  box-sizing: border-box;
+}
+
+.contact-right input {
+  height: 4rem;
+}
+
+.contact-right textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.contact-submit {
+  align-self: flex-start;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  background: linear-gradient(264deg, #df8908 -5.09%, #8415ff 106.28%);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contact-submit:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .contact-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-left h1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 5%;
+  }
+
+  .contact-title h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 2rem 3%;
+  }
+
+  .contact-title h1 {
+    font-size: 2rem;
+  }
+
+  .contact-details {
+    gap: 1rem;
+  }
+
+  .contact-submit {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
+}

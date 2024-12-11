@@ -1,0 +1,175 @@
+:root {
+  --primary-color: #dd8913;
+  --overlay-background: rgba(0, 0, 0, 0.7);
+  --text-color: #ffffff;
+}
+
+.mywork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3rem, 5vw, 5rem);
+  padding: clamp(1rem, 5vw, 2rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mywork-title {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.mywork-title h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 600;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.mywork-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 3vw, 2.5rem);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.mywork-item {
+  position: relative;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.mywork-image {
+  width: 100%;
+  height: clamp(200px, 30vw, 350px);
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.mywork-item:hover .mywork-image {
+  transform: scale(1.1);
+}
+
+.mywork-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: var(--text-color);
+  padding: clamp(1rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.mywork-item:hover .mywork-overlay,
+.mywork-item:focus-within .mywork-overlay {
+  opacity: 1;
+}
+
+.mywork-overlay h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: 10px;
+}
+
+.mywork-overlay p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  margin-bottom: 15px;
+}
+
+.project-link {
+  background-color: var(--primary-color);
+  color: white;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.25rem);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.project-link:hover {
+  background-color: #ff9900;
+}
+
+.mywork-showmore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-radius: 50px;
+  border: 2px solid #b9bcc0;
+  padding: clamp(1rem, 3vw, 2rem) clamp(2rem, 6vw, 4rem);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 500;
+  margin-top: clamp(2rem, 5vw, 3rem);
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.mywork-showmore:hover {
+  gap: 30px;
+}
+
+.showmore-arrow {
+  height: clamp(1.5rem, 4vw, 2.5rem);
+  width: clamp(1rem, 3vw, 1.5rem);
+  transition: transform 0.3s ease;
+}
+
+/* Improved Responsive Breakpoints */
+@media (max-width: 1200px) {
+  .mywork {
+    padding: 2rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mywork {
+    padding: 1rem 3%;
+    gap: 3rem;
+  }
+
+  .mywork-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .mywork-showmore {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mywork-container {
+    grid-template-columns: 1fr;
+  }
+
+  .mywork-showmore {
+    width: 90%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility Improvements */
+@media (hover: hover) {
+  .mywork-item:hover .mywork-image {
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

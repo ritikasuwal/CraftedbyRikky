@@ -1,0 +1,150 @@
+:root {
+  --primary-gradient: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.navbar-logo {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.menu-wrapper {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 60px;
+  font-size: 20px;
+}
+
+.nav-menu-items {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.no-underline {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav-connect {
+  padding: 20px 40px;
+  border-radius: 50px;
+  background: var(--primary-gradient);
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.nav-connect:hover {
+  transform: scale(1.05);
+}
+
+.nav-mob-close,
+.nav-mob-open {
+  display: none;
+}
+
+@media (max-width: 1128px) {
+  .navbar {
+    padding: 20px 50px;
+  }
+
+  .menu-wrapper {
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 80px;
+    z-index: 100;
+  }
+
+  .nav-mob-open {
+    display: block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100vh;
+    background: linear-gradient(260deg, #371a3f 50%, #da7c2510 102.6%);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 0 0 50px;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 50; /* controls the stacking order */
+  }
+
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .nav-menu.close {
+    transform: translateX(100%);
+  }
+
+  .nav-menu-items {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li p {
+    font-size: 30px;
+  }
+
+  .nav-mob-close {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 60;
+  }
+
+  .nav-connect {
+    display: block;
+    width: fit-content;
+    margin-top: 30px;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-connect {
+    display: none;
+  }
+}
